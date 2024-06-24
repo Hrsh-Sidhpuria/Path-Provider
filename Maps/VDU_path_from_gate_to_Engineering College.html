@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f41cfe60e052e1af25dc01c160446b7e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<style>
+.mapText {
+    white-space: nowrap;
+    color: white;
+    text-align: center;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
+                 1px 1px 1px black;
+}
+</style>
+    
+            <div class="folium-map" id="map_f41cfe60e052e1af25dc01c160446b7e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f41cfe60e052e1af25dc01c160446b7e = L.map(
+                "map_f41cfe60e052e1af25dc01c160446b7e",
+                {
+                    center: [21.422452948205656, 72.86634182661665],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 20,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ee29afe790f130e3b21ea3bd721a7ded = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var marker_844ea488288f2cd9ac81600cffd553a8 = L.marker(
+                [21.423793, 72.866333],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var icon_6ecc6eea9b578bc3fb7d256ec78b99cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_844ea488288f2cd9ac81600cffd553a8.setIcon(icon_6ecc6eea9b578bc3fb7d256ec78b99cd);
+        
+    
+        var popup_68bfae4d8642eaa9471e413c40974b9c = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_14c49a93dca46d077822d022679742a1 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5XRUxDT01FIFRPIFZJREhZQURFRVAgVU5JVkVSU0lUWTwvaDE+CiAgICA8cD5UYWtlIGEgdG91ciBpbiB2aWRoeWFkZWVwIGFuZCB5b3Ugd2lsbCBmaW5kIHRoZSBiZXN0IHVuaXZlcnNpdHkgaW4gdGhlIHN0YXRlLiBUaGUgbWFwIHdpbGwgdGFrZSB5b3UgdG8gZXZlcnkgZGVzaXJlIGRlc3RpbmF0aW9uIGluIHRoaXMgdW5pdmVyc2l0eS4KPC9wPiAgPGltZyBzcmM9IntpbWFnZV91cmx9IiBhbHQ9Ik1hcmtlciBJbWFnZSIgd2lkdGg9IjIwMHB4Ij4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_68bfae4d8642eaa9471e413c40974b9c.setContent(i_frame_14c49a93dca46d077822d022679742a1);
+            
+        
+
+        marker_844ea488288f2cd9ac81600cffd553a8.bindPopup(popup_68bfae4d8642eaa9471e413c40974b9c)
+        ;
+
+        
+    
+    
+            var polygon_77064eea9f7349b39184c785278cb194 = L.polygon(
+                [[21.423686, 72.86588], [21.423584, 72.866237], [21.422909, 72.866214], [21.422929, 72.865787]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_77064eea9f7349b39184c785278cb194.bindTooltip(
+                `<div>
+                     Recreation Area
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_d57858a4c915bcd06ec29e57994eef1f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae8fc74575e0f4cabea51a7a7aa1cd89 = $(`<div id="html_ae8fc74575e0f4cabea51a7a7aa1cd89" style="width: 100.0%; height: 100.0%;">     <h3>Recreation area</h3>     <p>This is information about the Recreation area.</p> </div>`)[0];
+                popup_d57858a4c915bcd06ec29e57994eef1f.setContent(html_ae8fc74575e0f4cabea51a7a7aa1cd89);
+            
+        
+
+        polygon_77064eea9f7349b39184c785278cb194.bindPopup(popup_d57858a4c915bcd06ec29e57994eef1f)
+        ;
+
+        
+    
+    
+            var polygon_6ad26d39c7e732cd7d75b4f5dec2632e = L.polygon(
+                [[21.422864, 72.865956], [21.422855, 72.866235], [21.422362, 72.866208], [21.422365, 72.865932]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2bc2b0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_6ad26d39c7e732cd7d75b4f5dec2632e.bindTooltip(
+                `<div>
+                     Degree/Diploma Engineering Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_d467064eb2a9dc926f93577417782045 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a4a598c7862f0a915b414943d2b9c91 = $(`<div id="html_1a4a598c7862f0a915b414943d2b9c91" style="width: 100.0%; height: 100.0%;">     <h3>Degree/Diploma Engineering College </h3>     <p>This is information about the Degree/Diploma Engineering College.</p> </div>`)[0];
+                popup_d467064eb2a9dc926f93577417782045.setContent(html_1a4a598c7862f0a915b414943d2b9c91);
+            
+        
+
+        polygon_6ad26d39c7e732cd7d75b4f5dec2632e.bindPopup(popup_d467064eb2a9dc926f93577417782045)
+        ;
+
+        
+    
+    
+            var polygon_e45f408cd66f2fab2932d84fe0a9b6ed = L.polygon(
+                [[21.42284, 72.865936], [21.422838, 72.865768], [21.422368, 72.865739], [21.422368, 72.865907]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#54de54", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_e45f408cd66f2fab2932d84fe0a9b6ed.bindTooltip(
+                `<div>
+                     Garden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_3f4483bb04aeb8eec933b74cad8ccdb6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c152f6d56f121f9d3f06e1118db08623 = $(`<div id="html_c152f6d56f121f9d3f06e1118db08623" style="width: 100.0%; height: 100.0%;">     <h3>GaRden</h3>     <p>This is information about the Garden.</p> </div>`)[0];
+                popup_3f4483bb04aeb8eec933b74cad8ccdb6.setContent(html_c152f6d56f121f9d3f06e1118db08623);
+            
+        
+
+        polygon_e45f408cd66f2fab2932d84fe0a9b6ed.bindPopup(popup_3f4483bb04aeb8eec933b74cad8ccdb6)
+        ;
+
+        
+    
+    
+            var polygon_9670186cc8ca1d79091a95f7d1d6c7ea = L.polygon(
+                [[21.42301, 72.86565], [21.422975, 72.864554], [21.422199, 72.864576], [21.42223, 72.865289], [21.422457, 72.865286], [21.42246, 72.865629]],
+                {"bubblingMouseEvents": true, "color": "#b0853a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e1003", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_9670186cc8ca1d79091a95f7d1d6c7ea.bindTooltip(
+                `<div>
+                     Play Ground
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_bcbd6ca77bfb122a4a9bd1d3e4fef917 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_499b3c64a3daf0f607b7d1daba178b63 = $(`<div id="html_499b3c64a3daf0f607b7d1daba178b63" style="width: 100.0%; height: 100.0%;">     <h3>Play Ground</h3>     <p>This is information about the Play Ground.</p> </div>`)[0];
+                popup_bcbd6ca77bfb122a4a9bd1d3e4fef917.setContent(html_499b3c64a3daf0f607b7d1daba178b63);
+            
+        
+
+        polygon_9670186cc8ca1d79091a95f7d1d6c7ea.bindPopup(popup_bcbd6ca77bfb122a4a9bd1d3e4fef917)
+        ;
+
+        
+    
+    
+            var polygon_f7b9e70371352edbc80833b072940fdb = L.polygon(
+                [[21.422421, 72.865298], [21.422424, 72.865652], [21.42229, 72.865646], [21.422305, 72.86531]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff308", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_f7b9e70371352edbc80833b072940fdb.bindTooltip(
+                `<div>
+                     Mess
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_225db96cc6035c64b6602c580c85e2af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ae87d986a30c1262fc7795326076911 = $(`<div id="html_5ae87d986a30c1262fc7795326076911" style="width: 100.0%; height: 100.0%;">     <h3>Mess</h3>     <p>This is information about the Mess.</p> </div>`)[0];
+                popup_225db96cc6035c64b6602c580c85e2af.setContent(html_5ae87d986a30c1262fc7795326076911);
+            
+        
+
+        polygon_f7b9e70371352edbc80833b072940fdb.bindPopup(popup_225db96cc6035c64b6602c580c85e2af)
+        ;
+
+        
+    
+    
+            var polygon_12bbcf4418981c995653f915dad2d9d2 = L.polygon(
+                [[21.422346, 72.865746], [21.422333, 72.865908], [21.422212, 72.865906], [21.422225, 72.86576]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#efff08", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_12bbcf4418981c995653f915dad2d9d2.bindTooltip(
+                `<div>
+                     Canteen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_93dba0d45def4ac98d6a4f4469d4be53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92d191a905ddc0c6c85affff422e9547 = $(`<div id="html_92d191a905ddc0c6c85affff422e9547" style="width: 100.0%; height: 100.0%;">     <h3>Canteen</h3>     <p>This is information about the Canteen.</p> </div>`)[0];
+                popup_93dba0d45def4ac98d6a4f4469d4be53.setContent(html_92d191a905ddc0c6c85affff422e9547);
+            
+        
+
+        polygon_12bbcf4418981c995653f915dad2d9d2.bindPopup(popup_93dba0d45def4ac98d6a4f4469d4be53)
+        ;
+
+        
+    
+    
+            var polygon_96b842f1eb7470263ad2d87bae7707e0 = L.polygon(
+                [[21.423504, 72.866396], [21.423442, 72.866678], [21.422936, 72.866651], [21.422934, 72.866348]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#08b5ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_96b842f1eb7470263ad2d87bae7707e0.bindTooltip(
+                `<div>
+                     Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_59a4ebf962947afc247eb43526c07d63 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6da07aedebdc24e593f8e52ea1207bd = $(`<div id="html_b6da07aedebdc24e593f8e52ea1207bd" style="width: 100.0%; height: 100.0%;">     <h3>Parking</h3>     <p>This is information about the Parking.</p> </div>`)[0];
+                popup_59a4ebf962947afc247eb43526c07d63.setContent(html_b6da07aedebdc24e593f8e52ea1207bd);
+            
+        
+
+        polygon_96b842f1eb7470263ad2d87bae7707e0.bindPopup(popup_59a4ebf962947afc247eb43526c07d63)
+        ;
+
+        
+    
+    
+            var polygon_dfc246de4ae0d559e968fd3d0b02348a = L.polygon(
+                [[21.422843, 72.866366], [21.42282, 72.866676], [21.422581, 72.866662], [21.422584, 72.866362]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b877d1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_dfc246de4ae0d559e968fd3d0b02348a.bindTooltip(
+                `<div>
+                     Science Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_3ed1f5d441fe666452183f5c5ca4ce6c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d37c6877a3295ddbbd09c5d98aaeb71c = $(`<div id="html_d37c6877a3295ddbbd09c5d98aaeb71c" style="width: 100.0%; height: 100.0%;">     <h3>Science College</h3>     <p>This is information about the Science College.</p> </div>`)[0];
+                popup_3ed1f5d441fe666452183f5c5ca4ce6c.setContent(html_d37c6877a3295ddbbd09c5d98aaeb71c);
+            
+        
+
+        polygon_dfc246de4ae0d559e968fd3d0b02348a.bindPopup(popup_3ed1f5d441fe666452183f5c5ca4ce6c)
+        ;
+
+        
+    
+    
+            var polygon_9d17bf6d1caf508532d88454c2617b4a = L.polygon(
+                [[21.422584, 72.866362], [21.422581, 72.866662], [21.422345, 72.866649], [21.422339, 72.866393], [21.4224, 72.866397], [21.422377, 72.866356]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#723a87", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_9d17bf6d1caf508532d88454c2617b4a.bindTooltip(
+                `<div>
+                     Nursing Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_259d15d184a38965ec2d2be0240bcb15 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05417497adb5ea9633e99bd92efa0da7 = $(`<div id="html_05417497adb5ea9633e99bd92efa0da7" style="width: 100.0%; height: 100.0%;">     <h3>Nursing Collage</h3>     <p>This is information about the physiotherapy area.</p> </div>`)[0];
+                popup_259d15d184a38965ec2d2be0240bcb15.setContent(html_05417497adb5ea9633e99bd92efa0da7);
+            
+        
+
+        polygon_9d17bf6d1caf508532d88454c2617b4a.bindPopup(popup_259d15d184a38965ec2d2be0240bcb15)
+        ;
+
+        
+    
+    
+            var polygon_afeed8d53d3ee63a2857899cf6a55321 = L.polygon(
+                [[21.422362, 72.866208], [21.422365, 72.865932], [21.422195, 72.865917], [21.422191, 72.866183]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3f423d", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_afeed8d53d3ee63a2857899cf6a55321.bindTooltip(
+                `<div>
+                     Work Shop
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_487431c129e3f3f34cb2ba03b0ade8e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c5689529389f8328216e9fe328f8735 = $(`<div id="html_5c5689529389f8328216e9fe328f8735" style="width: 100.0%; height: 100.0%;">     <h3>Nursing College</h3>     <p>This is information about the Nursing College.</p> </div>`)[0];
+                popup_487431c129e3f3f34cb2ba03b0ade8e2.setContent(html_5c5689529389f8328216e9fe328f8735);
+            
+        
+
+        polygon_afeed8d53d3ee63a2857899cf6a55321.bindPopup(popup_487431c129e3f3f34cb2ba03b0ade8e2)
+        ;
+
+        
+    
+    
+            var polygon_483cb1f06e95143d03f20c3445980b91 = L.polygon(
+                [[21.42219, 72.865089], [21.422232, 72.865642], [21.422156, 72.865642], [21.422146, 72.866161], [21.421761, 72.86621], [21.421761, 72.865688], [21.421418, 72.865636], [21.421414, 72.865172]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#634208", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_483cb1f06e95143d03f20c3445980b91.bindTooltip(
+                `<div>
+                     Heavy Vehical Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_c7a1ad876b298418dcf5f8a6bc11de74 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9287bb8f72c743d9caba247d22c351a6 = $(`<div id="html_9287bb8f72c743d9caba247d22c351a6" style="width: 100.0%; height: 100.0%;">     <h3>Heavy Vehical Parking</h3>     <p>This is information about the Heavy Vehical Parking.</p> </div>`)[0];
+                popup_c7a1ad876b298418dcf5f8a6bc11de74.setContent(html_9287bb8f72c743d9caba247d22c351a6);
+            
+        
+
+        polygon_483cb1f06e95143d03f20c3445980b91.bindPopup(popup_c7a1ad876b298418dcf5f8a6bc11de74)
+        ;
+
+        
+    
+    
+            var polygon_b6bc3043de9a0901d1671b86c094177b = L.polygon(
+                [[21.421741977451898, 72.86573139348225], [21.421741977451898, 72.86595140003394], [21.421664291677406, 72.86595329664213], [21.421664291677406, 72.86599502202264], [21.421531872648345, 72.86600071184725], [21.421519513532832, 72.86595329664213], [21.421440062051058, 72.86595329664213], [21.421427702927787, 72.86572191044122]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b877d1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_b6bc3043de9a0901d1671b86c094177b.bindTooltip(
+                `<div>
+                     Proposed Ayurvedic Hospital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_0f397a0843a1258206ffee70b4f6727b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e2716be5d045ba1ff471deee894b541 = $(`<div id="html_2e2716be5d045ba1ff471deee894b541" style="width: 100.0%; height: 100.0%;">     <h3>Ayurvedic Hospital</h3>     <p>This is information about the Ayurvedic Hospital.</p> </div>`)[0];
+                popup_0f397a0843a1258206ffee70b4f6727b.setContent(html_2e2716be5d045ba1ff471deee894b541);
+            
+        
+
+        polygon_b6bc3043de9a0901d1671b86c094177b.bindPopup(popup_0f397a0843a1258206ffee70b4f6727b)
+        ;
+
+        
+    
+    
+            var polygon_56dacf16faf2a32bbb273db9dfbb9e8a = L.polygon(
+                [[21.42174021186657, 72.86622071839896], [21.421738446281214, 72.86599502202264], [21.42141534380346, 72.86600450506366], [21.421410047035575, 72.86621502857435]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b877d1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_56dacf16faf2a32bbb273db9dfbb9e8a.bindTooltip(
+                `<div>
+                     Proposed Ayurvedic Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_3e7b0dca409d3c27f54edd647549f7a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8d6a2871c3d493a48f8aab9604480ba = $(`<div id="html_d8d6a2871c3d493a48f8aab9604480ba" style="width: 100.0%; height: 100.0%;">     <h3>Hospital</h3>     <p>This is information about the Hospital.</p> </div>`)[0];
+                popup_3e7b0dca409d3c27f54edd647549f7a3.setContent(html_d8d6a2871c3d493a48f8aab9604480ba);
+            
+        
+
+        polygon_56dacf16faf2a32bbb273db9dfbb9e8a.bindPopup(popup_3e7b0dca409d3c27f54edd647549f7a3)
+        ;
+
+        
+    
+    
+            var polygon_b6f7d2353498cc5bb11cef4845fb7a73 = L.polygon(
+                [[21.42379, 72.866247], [21.423723, 72.866219], [21.423657, 72.866379], [21.423724, 72.866401]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f70000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_b6f7d2353498cc5bb11cef4845fb7a73.bindTooltip(
+                `<div>
+                     Vidhyadeep University Main Gate
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_c15854c1a54cc04a33855f86bdc97049 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc06a3c1fb4a9a2866d0246df74d810d = $(`<div id="html_bc06a3c1fb4a9a2866d0246df74d810d" style="width: 100.0%; height: 100.0%;">     <h3>Main Gate</h3>     <p>This is information about the Maingate.</p> </div>`)[0];
+                popup_c15854c1a54cc04a33855f86bdc97049.setContent(html_bc06a3c1fb4a9a2866d0246df74d810d);
+            
+        
+
+        polygon_b6f7d2353498cc5bb11cef4845fb7a73.bindPopup(popup_c15854c1a54cc04a33855f86bdc97049)
+        ;
+
+        
+    
+    
+            var polygon_e6f9b0ffb08206c527aea72c7e22897a = L.polygon(
+                [[21.423048, 72.866906], [21.423054, 72.867079], [21.422747, 72.867091], [21.42275, 72.866929]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9077ed", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_e6f9b0ffb08206c527aea72c7e22897a.bindTooltip(
+                `<div>
+                     Vidhyadeep School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_972906c24f1a1034140998efd4bbd665 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_03f27a83236f7056abff2040b5fd9678 = $(`<div id="html_03f27a83236f7056abff2040b5fd9678" style="width: 100.0%; height: 100.0%;">     <h3>School</h3>     <p>This is information about the School.</p> </div>`)[0];
+                popup_972906c24f1a1034140998efd4bbd665.setContent(html_03f27a83236f7056abff2040b5fd9678);
+            
+        
+
+        polygon_e6f9b0ffb08206c527aea72c7e22897a.bindPopup(popup_972906c24f1a1034140998efd4bbd665)
+        ;
+
+        
+    
+    
+            var polygon_b22bea20fd5003303676c8ce30037beb = L.polygon(
+                [[21.423461, 72.866936], [21.42336, 72.867184], [21.423294, 72.867164], [21.423304, 72.867101], [21.423195, 72.867071], [21.423079, 72.867092], [21.423085, 72.866885], [21.423297, 72.866871]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00ed4b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_b22bea20fd5003303676c8ce30037beb.bindTooltip(
+                `<div>
+                     Play Ground
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_d8343164ce9219d619476baa6558b2ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ebba1c9709f723bd6d710c9f58ab7dd = $(`<div id="html_7ebba1c9709f723bd6d710c9f58ab7dd" style="width: 100.0%; height: 100.0%;">     <h3>Play ground</h3>     <p>This is information about the Play ground</p> </div>`)[0];
+                popup_d8343164ce9219d619476baa6558b2ea.setContent(html_7ebba1c9709f723bd6d710c9f58ab7dd);
+            
+        
+
+        polygon_b22bea20fd5003303676c8ce30037beb.bindPopup(popup_d8343164ce9219d619476baa6558b2ea)
+        ;
+
+        
+    
+    
+            var polygon_430e67f06bd474200387515e5b019557 = L.polygon(
+                [[21.422292, 72.866365], [21.422295, 72.866661], [21.421999, 72.866659], [21.421993, 72.866378]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d6d487", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_430e67f06bd474200387515e5b019557.bindTooltip(
+                `<div>
+                     Vidhyadeep Institute of Pharmacy(VIP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_a770415ce54a43cbfde15cdbd8124dbd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0f379c72238a94faca79c1b7f06e129 = $(`<div id="html_c0f379c72238a94faca79c1b7f06e129" style="width: 100.0%; height: 100.0%;">     <h3>Vidhyadeep Institute of Pharmacy(VIP)</h3>     <p>This is information about the pharmacy</p> </div>`)[0];
+                popup_a770415ce54a43cbfde15cdbd8124dbd.setContent(html_c0f379c72238a94faca79c1b7f06e129);
+            
+        
+
+        polygon_430e67f06bd474200387515e5b019557.bindPopup(popup_a770415ce54a43cbfde15cdbd8124dbd)
+        ;
+
+        
+    
+    
+            var polygon_c05f2fd041c4fe50f93e91167131599c = L.polygon(
+                [[21.421993, 72.866378], [21.421999, 72.866659], [21.42169, 72.86664], [21.421681, 72.866596], [21.421613, 72.866607], [21.421608, 72.866382]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d6d487", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_c05f2fd041c4fe50f93e91167131599c.bindTooltip(
+                `<div>
+                     Physiotherapy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_d59b92c5515314f37d5cbbf67326b727 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e36cbd6fc44962dd59473695c42c734d = $(`<div id="html_e36cbd6fc44962dd59473695c42c734d" style="width: 100.0%; height: 100.0%;">     <h3>Physiotherapy College</h3>     <p>This is information about the physiotherapy area.</p> </div>`)[0];
+                popup_d59b92c5515314f37d5cbbf67326b727.setContent(html_e36cbd6fc44962dd59473695c42c734d);
+            
+        
+
+        polygon_c05f2fd041c4fe50f93e91167131599c.bindPopup(popup_d59b92c5515314f37d5cbbf67326b727)
+        ;
+
+        
+    
+    
+            var polygon_2525d98884bde0a0532c29b6bf6f5cb5 = L.polygon(
+                [[21.42326569513903, 72.86670333335935], [21.423417130265307, 72.86671449731664], [21.423504725021566, 72.86674320463534], [21.423478001203183, 72.86680939095352], [21.423400056705002, 72.8667655325499], [21.423250106220063, 72.86677988620927]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6e5246", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_2525d98884bde0a0532c29b6bf6f5cb5.bindTooltip(
+                `<div>
+                     unknown
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_7069ebb3366e0598b294db9c9aff151e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c512169e9b015207181961775f2295ef = $(`<div id="html_c512169e9b015207181961775f2295ef" style="width: 100.0%; height: 100.0%;">     <h3>Currently Unknown place</h3>     <p>...</p> </div>`)[0];
+                popup_7069ebb3366e0598b294db9c9aff151e.setContent(html_c512169e9b015207181961775f2295ef);
+            
+        
+
+        polygon_2525d98884bde0a0532c29b6bf6f5cb5.bindPopup(popup_7069ebb3366e0598b294db9c9aff151e)
+        ;
+
+        
+    
+    
+            var polygon_ebe0cc5e0df5e229b65622a8e8884ebc = L.polygon(
+                [[21.42176996354016, 72.86463086626274], [21.421768197955164, 72.86480725082575], [21.421656966057974, 72.86481483725858], [21.421655200471616, 72.86492294392622], [21.421782322634463, 72.86492294392622], [21.42178055704963, 72.86509743188101], [21.421498063200723, 72.86510312170563], [21.42146451701988, 72.86462896965455]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dde366", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            polygon_ebe0cc5e0df5e229b65622a8e8884ebc.bindTooltip(
+                `<div>
+                     unknown1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_143df056e02aac4c67f2295cb3d14dc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12c10e7b48086c6b6bd00e0643c80c98 = $(`<div id="html_12c10e7b48086c6b6bd00e0643c80c98" style="width: 100.0%; height: 100.0%;">     <h3>Currently Unknown place</h3>     <p>...</p> </div>`)[0];
+                popup_143df056e02aac4c67f2295cb3d14dc1.setContent(html_12c10e7b48086c6b6bd00e0643c80c98);
+            
+        
+
+        polygon_ebe0cc5e0df5e229b65622a8e8884ebc.bindPopup(popup_143df056e02aac4c67f2295cb3d14dc1)
+        ;
+
+        
+    
+    
+            var poly_line_d640c80fef3e18c1aca32ffa8d851839 = L.polyline(
+                [[21.423714, 72.866327], [21.423628, 72.866303], [21.423239, 72.86629], [21.422862, 72.866272], [21.422872, 72.865709], [21.42243, 72.865684], [21.422185, 72.865702], [21.422147, 72.866283], [21.421395, 72.86629], [21.421375, 72.865703], [21.421373, 72.865154]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            poly_line_d640c80fef3e18c1aca32ffa8d851839.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_2531fac5984799453fb7a61b12f543f4 = L.polyline(
+                [[21.422883, 72.866275], [21.422776, 72.866291], [21.42234, 72.866275], [21.422134, 72.866273]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            poly_line_2531fac5984799453fb7a61b12f543f4.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_37fd89c943df46b627acc7378d28ee79 = L.polyline(
+                [[21.422869, 72.866274], [21.422852, 72.866891], [21.423303, 72.866846], [21.423507, 72.866899]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            poly_line_37fd89c943df46b627acc7378d28ee79.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_5e39935c78df9cd0fd8b9551ead8317b = L.polyline(
+                [[21.422856, 72.865796], [21.422871, 72.865714], [21.42302, 72.865717]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            poly_line_5e39935c78df9cd0fd8b9551ead8317b.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_be6c0b7c8f9ed78916781b3ea1507247 = L.polyline(
+                [[21.422295, 72.866268], [21.422319, 72.86665]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            poly_line_be6c0b7c8f9ed78916781b3ea1507247.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_b2cf3761bf4ce152c805df24f362e112 = L.polyline(
+                [[21.422247, 72.865695], [21.42225, 72.865256]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            poly_line_b2cf3761bf4ce152c805df24f362e112.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71f9bb9a928f1dde186b524fa17720e2 = L.marker(
+                [21.42335988928804, 72.86589851021863],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_b8eedb62504e4ed3e2d4b65947591b6e = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 12px;\"\u003eRecreation\u003cbr\u003e   Area\u003c/div\u003e"});
+            marker_71f9bb9a928f1dde186b524fa17720e2.setIcon(div_icon_b8eedb62504e4ed3e2d4b65947591b6e);
+        
+    
+        var popup_0f929f9694a577c79ab7741a80d4029b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64466afb0f337e0f53027f7dd45061a0 = $(`<div id="html_64466afb0f337e0f53027f7dd45061a0" style="width: 100.0%; height: 100.0%;">     <h3>Recreation area</h3>     <p>This is information about the Recreation area.</p> </div>`)[0];
+                popup_0f929f9694a577c79ab7741a80d4029b.setContent(html_64466afb0f337e0f53027f7dd45061a0);
+            
+        
+
+        marker_71f9bb9a928f1dde186b524fa17720e2.bindPopup(popup_0f929f9694a577c79ab7741a80d4029b)
+        ;
+
+        
+    
+    
+            marker_71f9bb9a928f1dde186b524fa17720e2.bindTooltip(
+                `<div>
+                     Recreation Area
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_88bbde91f49b3f20afde484b2e7c72d8 = L.marker(
+                [21.422673310826767, 72.86596391855792],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_733078d9ab96332cdb6220492ffa11ba = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 7px;\"\u003eDegree/Diploma \u003cbr\u003e Engineering College\u003c/div\u003e"});
+            marker_88bbde91f49b3f20afde484b2e7c72d8.setIcon(div_icon_733078d9ab96332cdb6220492ffa11ba);
+        
+    
+        var popup_0e7eb6530cbd6503ce834b35ff6ba83d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_164cd699b15b8171282c7a14ad9f7ffc = $(`<div id="html_164cd699b15b8171282c7a14ad9f7ffc" style="width: 100.0%; height: 100.0%;">     <h3>Degree/Diploma Engineering College </h3>     <p>This is information about the Degree/Diploma Engineering College.</p> </div>`)[0];
+                popup_0e7eb6530cbd6503ce834b35ff6ba83d.setContent(html_164cd699b15b8171282c7a14ad9f7ffc);
+            
+        
+
+        marker_88bbde91f49b3f20afde484b2e7c72d8.bindPopup(popup_0e7eb6530cbd6503ce834b35ff6ba83d)
+        ;
+
+        
+    
+    
+            marker_88bbde91f49b3f20afde484b2e7c72d8.bindTooltip(
+                `<div>
+                     Degree/Diploma Engineering College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_56c7ca86a00a6598049f81c9e79881d1 = L.marker(
+                [21.422612421453497, 72.86489483054343],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_8f5aa57ea2fd8501e54e77eb011c3f3e = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 14px;\"\u003ePlay Ground\u003c/div\u003e"});
+            marker_56c7ca86a00a6598049f81c9e79881d1.setIcon(div_icon_8f5aa57ea2fd8501e54e77eb011c3f3e);
+        
+    
+        var popup_431a414a9cd95b32cf86acaba1587a50 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f19d7c67b35cea666cb01b71675e8d8 = $(`<div id="html_3f19d7c67b35cea666cb01b71675e8d8" style="width: 100.0%; height: 100.0%;"><folium.vector_layers.Polygon object at 0x7a1cc918eb30></div>`)[0];
+                popup_431a414a9cd95b32cf86acaba1587a50.setContent(html_3f19d7c67b35cea666cb01b71675e8d8);
+            
+        
+
+        marker_56c7ca86a00a6598049f81c9e79881d1.bindPopup(popup_431a414a9cd95b32cf86acaba1587a50)
+        ;
+
+        
+    
+    
+            marker_56c7ca86a00a6598049f81c9e79881d1.bindTooltip(
+                `<div>
+                     Play Ground
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_44fc1e01ba377009f035a0d7815c8e67 = L.marker(
+                [21.42273000091073, 72.86641049964308],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_661686a60fdef21a23a183d251cafc3e = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 9px;\"\u003eScience College\u003c/div\u003e"});
+            marker_44fc1e01ba377009f035a0d7815c8e67.setIcon(div_icon_661686a60fdef21a23a183d251cafc3e);
+        
+    
+        var popup_c09f4d837e349752f4c59290b32ee244 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b78950d18f2515f44834c3e9f999b0c5 = $(`<div id="html_b78950d18f2515f44834c3e9f999b0c5" style="width: 100.0%; height: 100.0%;"><folium.vector_layers.Polygon object at 0x7a1cc91574f0></div>`)[0];
+                popup_c09f4d837e349752f4c59290b32ee244.setContent(html_b78950d18f2515f44834c3e9f999b0c5);
+            
+        
+
+        marker_44fc1e01ba377009f035a0d7815c8e67.bindPopup(popup_c09f4d837e349752f4c59290b32ee244)
+        ;
+
+        
+    
+    
+            marker_44fc1e01ba377009f035a0d7815c8e67.bindTooltip(
+                `<div>
+                     Science College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_985a0ad873bd7fefa837d876867a863b = L.marker(
+                [21.422486443346394, 72.86638343412254],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_7f2ca944d88a3235e6058263e2391182 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 9px;\"\u003eNursing College\u003c/div\u003e"});
+            marker_985a0ad873bd7fefa837d876867a863b.setIcon(div_icon_7f2ca944d88a3235e6058263e2391182);
+        
+    
+        var popup_076f69c44c71b15fd303dc430f7fc8a2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69a84dea0361a17b0aa36be36f02a95a = $(`<div id="html_69a84dea0361a17b0aa36be36f02a95a" style="width: 100.0%; height: 100.0%;">     <h3>Nursing Collage</h3>     <p>This is information about the physiotherapy area.</p> </div>`)[0];
+                popup_076f69c44c71b15fd303dc430f7fc8a2.setContent(html_69a84dea0361a17b0aa36be36f02a95a);
+            
+        
+
+        marker_985a0ad873bd7fefa837d876867a863b.bindPopup(popup_076f69c44c71b15fd303dc430f7fc8a2)
+        ;
+
+        
+    
+    
+            marker_985a0ad873bd7fefa837d876867a863b.bindTooltip(
+                `<div>
+                     Nursing College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_15370edb7cc107d894597b075ed58005 = L.marker(
+                [21.422198792938673, 72.86638794503911],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_6d6e693271d93b070fc4de10ea92e08e = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 9px;\"\u003eVidhyadeep Institute\u003cbr\u003e of Pharmacy(VIP)\u003c/div\u003e"});
+            marker_15370edb7cc107d894597b075ed58005.setIcon(div_icon_6d6e693271d93b070fc4de10ea92e08e);
+        
+    
+        var popup_196700539930c33484b9264ff503aa86 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b14773e4bf2e62101f771d05b48b8a22 = $(`<div id="html_b14773e4bf2e62101f771d05b48b8a22" style="width: 100.0%; height: 100.0%;"><folium.vector_layers.Polygon object at 0x7a1cc918c310></div>`)[0];
+                popup_196700539930c33484b9264ff503aa86.setContent(html_b14773e4bf2e62101f771d05b48b8a22);
+            
+        
+
+        marker_15370edb7cc107d894597b075ed58005.bindPopup(popup_196700539930c33484b9264ff503aa86)
+        ;
+
+        
+    
+    
+            marker_15370edb7cc107d894597b075ed58005.bindTooltip(
+                `<div>
+                     Vidhyadeep Institute of Pharmacy(VIP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0e3c69601c822da2afda838e79fa700b = L.marker(
+                [21.423240210705597, 72.86642177693508],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_eb83659e6980bd9b1f3a130f7aa72ec5 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 12px;\"\u003eParking\u003c/div\u003e"});
+            marker_0e3c69601c822da2afda838e79fa700b.setIcon(div_icon_eb83659e6980bd9b1f3a130f7aa72ec5);
+        
+    
+        var popup_930ad4c412d3e192eb543e7a0a75227f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5683d7f50b17111eb0e6a708c707bdab = $(`<div id="html_5683d7f50b17111eb0e6a708c707bdab" style="width: 100.0%; height: 100.0%;"><folium.vector_layers.Polygon object at 0x7a1cc91567a0></div>`)[0];
+                popup_930ad4c412d3e192eb543e7a0a75227f.setContent(html_5683d7f50b17111eb0e6a708c707bdab);
+            
+        
+
+        marker_0e3c69601c822da2afda838e79fa700b.bindPopup(popup_930ad4c412d3e192eb543e7a0a75227f)
+        ;
+
+        
+    
+    
+            marker_0e3c69601c822da2afda838e79fa700b.bindTooltip(
+                `<div>
+                     Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eb09c264e85a74b99afef28a18200646 = L.marker(
+                [21.42165722933222, 72.86585467301552],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_ebb86984efbf827efb699e241cda5bf2 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 10px;\"\u003eHomeopathic \u003cbr\u003eHospital\u003c/div\u003e"});
+            marker_eb09c264e85a74b99afef28a18200646.setIcon(div_icon_ebb86984efbf827efb699e241cda5bf2);
+        
+    
+        var popup_5dbbbf95549287147a050808e240cd1c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32006f1c33b70c46b0bc462849eae4c8 = $(`<div id="html_32006f1c33b70c46b0bc462849eae4c8" style="width: 100.0%; height: 100.0%;">     <h3>Hospital</h3>     <p>This is information about the Hospital.</p> </div>`)[0];
+                popup_5dbbbf95549287147a050808e240cd1c.setContent(html_32006f1c33b70c46b0bc462849eae4c8);
+            
+        
+
+        marker_eb09c264e85a74b99afef28a18200646.bindPopup(popup_5dbbbf95549287147a050808e240cd1c)
+        ;
+
+        
+    
+    
+            marker_eb09c264e85a74b99afef28a18200646.bindTooltip(
+                `<div>
+                     Vidhyadeep Homeopathic Hospital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d33cb6bffe74c18bbbc90d8eab8a40b = L.marker(
+                [21.42173491511047, 72.86638382670452],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_fd78763e3ff2e63acd310990d4968242 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 10px;\"\u003ePhysiotherapy Hospital \u003cbr\u003e and college\u003c/div\u003e"});
+            marker_0d33cb6bffe74c18bbbc90d8eab8a40b.setIcon(div_icon_fd78763e3ff2e63acd310990d4968242);
+        
+    
+        var popup_3a1df2e7f9fb9fcb6637750b0c1a21d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5672ee0db2a32346ad74bb3d4f890a77 = $(`<div id="html_5672ee0db2a32346ad74bb3d4f890a77" style="width: 100.0%; height: 100.0%;">     <h3>Hospital</h3>     <p>This is information about the Hospital.</p> </div>`)[0];
+                popup_3a1df2e7f9fb9fcb6637750b0c1a21d9.setContent(html_5672ee0db2a32346ad74bb3d4f890a77);
+            
+        
+
+        marker_0d33cb6bffe74c18bbbc90d8eab8a40b.bindPopup(popup_3a1df2e7f9fb9fcb6637750b0c1a21d9)
+        ;
+
+        
+    
+    
+            marker_0d33cb6bffe74c18bbbc90d8eab8a40b.bindTooltip(
+                `<div>
+                     Vidhyadeep Institute Of Physiotherapy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1a76d35a2aaddade4587abb97c6ea42 = L.marker(
+                [21.421899114465383, 72.86537483114158],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_bd3e94446c1614879d134117bce2d921 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 12px;\"\u003eHeavy Vehical Parking\u003c/div\u003e"});
+            marker_e1a76d35a2aaddade4587abb97c6ea42.setIcon(div_icon_bd3e94446c1614879d134117bce2d921);
+        
+    
+        var popup_3130a5d28b731deb5e5f352adea57731 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d0c246189cd2db94fa533de981208ce = $(`<div id="html_9d0c246189cd2db94fa533de981208ce" style="width: 100.0%; height: 100.0%;"><folium.vector_layers.Polygon object at 0x7a1cc918d4b0></div>`)[0];
+                popup_3130a5d28b731deb5e5f352adea57731.setContent(html_9d0c246189cd2db94fa533de981208ce);
+            
+        
+
+        marker_e1a76d35a2aaddade4587abb97c6ea42.bindPopup(popup_3130a5d28b731deb5e5f352adea57731)
+        ;
+
+        
+    
+    
+            marker_e1a76d35a2aaddade4587abb97c6ea42.bindTooltip(
+                `<div>
+                     Heavy Vehical Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f019f5c3316fb417b8f4a4daeeb70269 = L.marker(
+                [21.422376540871614, 72.86542572701963],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var div_icon_95852721f104f3d0ca8ad3c5de98b23d = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 10px;\"\u003eMess\u003c/div\u003e"});
+            marker_f019f5c3316fb417b8f4a4daeeb70269.setIcon(div_icon_95852721f104f3d0ca8ad3c5de98b23d);
+        
+    
+        var popup_b80d08c5072ea0f4607e523cff3ed26b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27d5fd45e63fe9d5e62769d06d911532 = $(`<div id="html_27d5fd45e63fe9d5e62769d06d911532" style="width: 100.0%; height: 100.0%;"><folium.vector_layers.Polygon object at 0x7a1cc91562c0></div>`)[0];
+                popup_b80d08c5072ea0f4607e523cff3ed26b.setContent(html_27d5fd45e63fe9d5e62769d06d911532);
+            
+        
+
+        marker_f019f5c3316fb417b8f4a4daeeb70269.bindPopup(popup_b80d08c5072ea0f4607e523cff3ed26b)
+        ;
+
+        
+    
+    
+            marker_f019f5c3316fb417b8f4a4daeeb70269.bindTooltip(
+                `<div>
+                     Mess
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            ant_path_fefbfb06540c706aead134cf1e61e28b = L.polyline.antPath(
+              [[21.423726, 72.866325], [21.422846, 72.866274], [21.422878, 72.866088], [21.422767, 72.866083]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+
+        function geo_json_394ce5f022cf689d5577bd4e57e11d0d_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_394ce5f022cf689d5577bd4e57e11d0d = L.geoJson(null, {
+                onEachFeature: geo_json_394ce5f022cf689d5577bd4e57e11d0d_onEachFeature,
+            
+        });
+
+        function geo_json_394ce5f022cf689d5577bd4e57e11d0d_add (data) {
+            geo_json_394ce5f022cf689d5577bd4e57e11d0d
+                .addData(data)
+                .addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        }
+            geo_json_394ce5f022cf689d5577bd4e57e11d0d_add({"features": [{"geometry": {"coordinates": [[[72.8659184024342, 21.422832019714875], [72.86590386282109, 21.42229448278964], [72.86619465511157, 21.422296416379055], [72.86620296346194, 21.42282235180201], [72.8659184024342, 21.422832019714875]]], "type": "Polygon"}, "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            var marker_1abec08d9c23885d61a5a4a81ea9cb3b = L.marker(
+                [21.422506743486604, 72.86606373071],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+        var popup_bb42ff32250c9a32603e794a1449b26d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4cf796b1835174e6ce1165ad37e2cd3b = $(`<div id="html_4cf796b1835174e6ce1165ad37e2cd3b" style="width: 100.0%; height: 100.0%;">     <h3>Degree/Diploma Engineering College </h3>     <p>This is information about the Degree/Diploma Engineering College.</p> </div>`)[0];
+                popup_bb42ff32250c9a32603e794a1449b26d.setContent(html_4cf796b1835174e6ce1165ad37e2cd3b);
+            
+        
+
+        marker_1abec08d9c23885d61a5a4a81ea9cb3b.bindPopup(popup_bb42ff32250c9a32603e794a1449b26d)
+        ;
+
+        
+    
+    
+            marker_1abec08d9c23885d61a5a4a81ea9cb3b.bindTooltip(
+                `<div>
+                     Engineering College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            ant_path_61d75bddcf0495905e3ffe1bb3d28494 = L.polyline.antPath(
+              [[21.423726, 72.866325], [21.422846, 72.866274], [21.422878, 72.866088], [21.422767, 72.866083]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+
+        function geo_json_a7c9076b4f9bde42974fb38727f44a69_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a7c9076b4f9bde42974fb38727f44a69 = L.geoJson(null, {
+                onEachFeature: geo_json_a7c9076b4f9bde42974fb38727f44a69_onEachFeature,
+            
+        });
+
+        function geo_json_a7c9076b4f9bde42974fb38727f44a69_add (data) {
+            geo_json_a7c9076b4f9bde42974fb38727f44a69
+                .addData(data)
+                .addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        }
+            geo_json_a7c9076b4f9bde42974fb38727f44a69_add({"features": [{"geometry": {"coordinates": [[[72.8659184024342, 21.422832019714875], [72.86590386282109, 21.42229448278964], [72.86619465511157, 21.422296416379055], [72.86620296346194, 21.42282235180201], [72.8659184024342, 21.422832019714875]]], "type": "Polygon"}, "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            var marker_832d962304e1a23e562da81de26eb675 = L.marker(
+                [21.422506743486604, 72.86606373071],
+                {}
+            ).addTo(map_f41cfe60e052e1af25dc01c160446b7e);
+        
+    
+            var icon_2e3bc189a64ce3e5935d7cba73d8c1ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_832d962304e1a23e562da81de26eb675.setIcon(icon_2e3bc189a64ce3e5935d7cba73d8c1ee);
+        
+    
+        var popup_49b100bbc8c7d0e0e1ae84665cf3afce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fee1de39c3fe82cd8e7abdcbe340443e = $(`<div id="html_fee1de39c3fe82cd8e7abdcbe340443e" style="width: 100.0%; height: 100.0%;">     <h3>Degree/Diploma Engineering College </h3>     <p>This is information about the Degree/Diploma Engineering College.</p> </div>`)[0];
+                popup_49b100bbc8c7d0e0e1ae84665cf3afce.setContent(html_fee1de39c3fe82cd8e7abdcbe340443e);
+            
+        
+
+        marker_832d962304e1a23e562da81de26eb675.bindPopup(popup_49b100bbc8c7d0e0e1ae84665cf3afce)
+        ;
+
+        
+    
+    
+            marker_832d962304e1a23e562da81de26eb675.bindTooltip(
+                `<div>
+                     Engineering College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

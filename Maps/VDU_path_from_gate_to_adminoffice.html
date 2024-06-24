@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b18d522a71917ee0a832aeafb7dbe9b5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<style>
+.mapText {
+    white-space: nowrap;
+    color: white;
+    text-align: center;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
+                 1px 1px 1px black;
+}
+</style>
+    
+            <div class="folium-map" id="map_b18d522a71917ee0a832aeafb7dbe9b5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b18d522a71917ee0a832aeafb7dbe9b5 = L.map(
+                "map_b18d522a71917ee0a832aeafb7dbe9b5",
+                {
+                    center: [21.422452948205656, 72.86634182661665],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 20,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e9cb52c0652f7835b41f5f3d6fab9c6b = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var marker_535f16a5748545c202e5e0cbb50329de = L.marker(
+                [21.423793, 72.866333],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var icon_8322b727d9913ce4046baf4064f8d874 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_535f16a5748545c202e5e0cbb50329de.setIcon(icon_8322b727d9913ce4046baf4064f8d874);
+        
+    
+        var popup_b267e724075765e7ef111a5326fb7d43 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_a90045c83fe7a8058f8e133a7edcbd6a = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5XRUxDT01FIFRPIFZJREhZQURFRVAgVU5JVkVSU0lUWTwvaDE+CiAgICA8cD5UYWtlIGEgdG91ciBpbiB2aWRoeWFkZWVwIGFuZCB5b3Ugd2lsbCBmaW5kIHRoZSBiZXN0IHVuaXZlcnNpdHkgaW4gdGhlIHN0YXRlLiBUaGUgbWFwIHdpbGwgdGFrZSB5b3UgdG8gZXZlcnkgZGVzaXJlIGRlc3RpbmF0aW9uIGluIHRoaXMgdW5pdmVyc2l0eS4KPC9wPiAgPGltZyBzcmM9IntpbWFnZV91cmx9IiBhbHQ9Ik1hcmtlciBJbWFnZSIgd2lkdGg9IjIwMHB4Ij4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_b267e724075765e7ef111a5326fb7d43.setContent(i_frame_a90045c83fe7a8058f8e133a7edcbd6a);
+            
+        
+
+        marker_535f16a5748545c202e5e0cbb50329de.bindPopup(popup_b267e724075765e7ef111a5326fb7d43)
+        ;
+
+        
+    
+    
+            var polygon_28a9b2814af1729b71b38d8e9c132051 = L.polygon(
+                [[21.423686, 72.86588], [21.423584, 72.866237], [21.422909, 72.866214], [21.422929, 72.865787]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_28a9b2814af1729b71b38d8e9c132051.bindTooltip(
+                `<div>
+                     Recreation Area
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_10a4d7b7f1ac02a98d0750c53e81d413 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3903cccc8ed4905dfb91577a3f663be = $(`<div id="html_c3903cccc8ed4905dfb91577a3f663be" style="width: 100.0%; height: 100.0%;">     <h3>Recreation area</h3>     <p>This is information about the Recreation area.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_10a4d7b7f1ac02a98d0750c53e81d413.setContent(html_c3903cccc8ed4905dfb91577a3f663be);
+            
+        
+
+        polygon_28a9b2814af1729b71b38d8e9c132051.bindPopup(popup_10a4d7b7f1ac02a98d0750c53e81d413)
+        ;
+
+        
+    
+    
+            var polygon_1ee6b952f8591d22470ca5896de779f9 = L.polygon(
+                [[21.422864, 72.865956], [21.422855, 72.866235], [21.422362, 72.866208], [21.422365, 72.865932]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2bc2b0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_1ee6b952f8591d22470ca5896de779f9.bindTooltip(
+                `<div>
+                     Degree/Diploma Engineering Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_172e10b5c21494f8079c6fcd9f002e8d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7dcc0345947c6f47cec0a5357bf5d0d0 = $(`<div id="html_7dcc0345947c6f47cec0a5357bf5d0d0" style="width: 100.0%; height: 100.0%;">     <h3>Degree/Diploma Engineering College </h3>     <p>This is information about the Degree/Diploma Engineering College.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_172e10b5c21494f8079c6fcd9f002e8d.setContent(html_7dcc0345947c6f47cec0a5357bf5d0d0);
+            
+        
+
+        polygon_1ee6b952f8591d22470ca5896de779f9.bindPopup(popup_172e10b5c21494f8079c6fcd9f002e8d)
+        ;
+
+        
+    
+    
+            var polygon_f6d6bcff8966266f34d36136dc71a709 = L.polygon(
+                [[21.42284, 72.865936], [21.422838, 72.865768], [21.422368, 72.865739], [21.422368, 72.865907]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#54de54", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_f6d6bcff8966266f34d36136dc71a709.bindTooltip(
+                `<div>
+                     Garden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_330f10b1d08ea014540b5ba9de6a2f28 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d0f1afe62ad6f4c4e877890e8aa5120f = $(`<div id="html_d0f1afe62ad6f4c4e877890e8aa5120f" style="width: 100.0%; height: 100.0%;">     <h3>Garden</h3>     <p>This is information about the Garden.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_330f10b1d08ea014540b5ba9de6a2f28.setContent(html_d0f1afe62ad6f4c4e877890e8aa5120f);
+            
+        
+
+        polygon_f6d6bcff8966266f34d36136dc71a709.bindPopup(popup_330f10b1d08ea014540b5ba9de6a2f28)
+        ;
+
+        
+    
+    
+            var polygon_1e42f7f8da43249359c4b2f1aa89c141 = L.polygon(
+                [[21.42301, 72.86565], [21.422975, 72.864554], [21.422199, 72.864576], [21.42223, 72.865289], [21.422457, 72.865286], [21.42246, 72.865629]],
+                {"bubblingMouseEvents": true, "color": "#b0853a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e1003", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_1e42f7f8da43249359c4b2f1aa89c141.bindTooltip(
+                `<div>
+                     Play Ground
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_bd7d73a58b1716e1fc7dac5ae637e598 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8f9cab181caec6968169cefed9184dfc = $(`<div id="html_8f9cab181caec6968169cefed9184dfc" style="width: 100.0%; height: 100.0%;">     <h3>PlayGround     </h3>     <p>Experience the spirit of sports and recreation at Vidhyadeep Playground,      a dynamic space for physical activity and camaraderie. With well-maintained facilities for various sports.      <a href="#">Read More</a></p> </div>`)[0];
+                popup_bd7d73a58b1716e1fc7dac5ae637e598.setContent(html_8f9cab181caec6968169cefed9184dfc);
+            
+        
+
+        polygon_1e42f7f8da43249359c4b2f1aa89c141.bindPopup(popup_bd7d73a58b1716e1fc7dac5ae637e598)
+        ;
+
+        
+    
+    
+            var polygon_a75a0a811a553dfb506aea3676d489cc = L.polygon(
+                [[21.422421, 72.865298], [21.422424, 72.865652], [21.42229, 72.865646], [21.422305, 72.86531]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff308", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_a75a0a811a553dfb506aea3676d489cc.bindTooltip(
+                `<div>
+                     Mess
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_303c55973489b4bd0e400afb65e38246 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f844075707e5c20a0f6c7fd75d8de39 = $(`<div id="html_1f844075707e5c20a0f6c7fd75d8de39" style="width: 100.0%; height: 100.0%;">     <h3>Vidhyadeep Mess</h3>     <p>Indulge your taste buds at Vidhyadeep Mess, a culinary haven where delicious flavors meet wholesome meals.  With a diverse menu catering to various preferences,the Mess ensures a satisfying dining experience for students.  <a href="#">Read More</a></p> </div>`)[0];
+                popup_303c55973489b4bd0e400afb65e38246.setContent(html_1f844075707e5c20a0f6c7fd75d8de39);
+            
+        
+
+        polygon_a75a0a811a553dfb506aea3676d489cc.bindPopup(popup_303c55973489b4bd0e400afb65e38246)
+        ;
+
+        
+    
+    
+            var polygon_2d70276790deeba747e9e517752ca2f9 = L.polygon(
+                [[21.422346, 72.865746], [21.422333, 72.865908], [21.422212, 72.865906], [21.422225, 72.86576]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#efff08", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_2d70276790deeba747e9e517752ca2f9.bindTooltip(
+                `<div>
+                     Canteen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_bcac4ffccf1c4cfbc40d43f5ba314774 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6784cddba9195afee20128172178bdcc = $(`<div id="html_6784cddba9195afee20128172178bdcc" style="width: 100.0%; height: 100.0%;">     <h3>Canteen</h3>     <p>Discover a culinary delight at Vidhyadeep Canteen, a vibrant hub offering a delectable array of snacks and meals.      Nestled within the campus, the canteen provides students with a cozy atmosphere to unwind and socialize.      <a href="#">Read More</a></p> </div>`)[0];
+                popup_bcac4ffccf1c4cfbc40d43f5ba314774.setContent(html_6784cddba9195afee20128172178bdcc);
+            
+        
+
+        polygon_2d70276790deeba747e9e517752ca2f9.bindPopup(popup_bcac4ffccf1c4cfbc40d43f5ba314774)
+        ;
+
+        
+    
+    
+            var polygon_1ad4c043f1713f9fcadf22bfd0a97804 = L.polygon(
+                [[21.423504, 72.866396], [21.423442, 72.866678], [21.422936, 72.866651], [21.422934, 72.866348]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#08b5ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_1ad4c043f1713f9fcadf22bfd0a97804.bindTooltip(
+                `<div>
+                     Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_3a794e21b7b89956bcf13841f26e81fb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6780e35ba2fe30e5307dba6ef9cc25d3 = $(`<div id="html_6780e35ba2fe30e5307dba6ef9cc25d3" style="width: 100.0%; height: 100.0%;">     <h3>Vidhyadeep Parking</h3>     <p>Vidhyadeep provides convenient and secure parking facilities,      ensuring hassle-free access for both students and visitors.      <a href="#">Read More</a></p> </div>`)[0];
+                popup_3a794e21b7b89956bcf13841f26e81fb.setContent(html_6780e35ba2fe30e5307dba6ef9cc25d3);
+            
+        
+
+        polygon_1ad4c043f1713f9fcadf22bfd0a97804.bindPopup(popup_3a794e21b7b89956bcf13841f26e81fb)
+        ;
+
+        
+    
+    
+            var polygon_b7647a6ca3420a92057dcef82960e109 = L.polygon(
+                [[21.422843, 72.866366], [21.42282, 72.866676], [21.422581, 72.866662], [21.422584, 72.866362]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b877d1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_b7647a6ca3420a92057dcef82960e109.bindTooltip(
+                `<div>
+                     Science Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_6a2cfa6ff80a445115f4eda125c33203 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01894b5398ce84e55e1717db1859ddb6 = $(`<div id="html_01894b5398ce84e55e1717db1859ddb6" style="width: 100.0%; height: 100.0%;">     <h3>Science College</h3>     <p>This is information about the Science College.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_6a2cfa6ff80a445115f4eda125c33203.setContent(html_01894b5398ce84e55e1717db1859ddb6);
+            
+        
+
+        polygon_b7647a6ca3420a92057dcef82960e109.bindPopup(popup_6a2cfa6ff80a445115f4eda125c33203)
+        ;
+
+        
+    
+    
+            var polygon_3c66a24d9918f8a0e3e711466d38a490 = L.polygon(
+                [[21.422584, 72.866362], [21.422581, 72.866662], [21.422345, 72.866649], [21.422339, 72.866393], [21.4224, 72.866397], [21.422377, 72.866356]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#723a87", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_3c66a24d9918f8a0e3e711466d38a490.bindTooltip(
+                `<div>
+                     Nursing Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_121d80ec6b4be22e4f10d3236665d7f6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3602752303baa641157b562d5ab6185a = $(`<div id="html_3602752303baa641157b562d5ab6185a" style="width: 100.0%; height: 100.0%;">     <h3>Nursing Collage</h3>     <p>This is information about the physiotherapy area.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_121d80ec6b4be22e4f10d3236665d7f6.setContent(html_3602752303baa641157b562d5ab6185a);
+            
+        
+
+        polygon_3c66a24d9918f8a0e3e711466d38a490.bindPopup(popup_121d80ec6b4be22e4f10d3236665d7f6)
+        ;
+
+        
+    
+    
+            var polygon_a19d6c6115455807e4d089f2118cba29 = L.polygon(
+                [[21.422362, 72.866208], [21.422365, 72.865932], [21.422195, 72.865917], [21.422191, 72.866183]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3f423d", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_a19d6c6115455807e4d089f2118cba29.bindTooltip(
+                `<div>
+                     Work Shop
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_0055028fee99ccd141a2269dae361310 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_564afdb9ea8a3521d197dd67b58443b1 = $(`<div id="html_564afdb9ea8a3521d197dd67b58443b1" style="width: 100.0%; height: 100.0%;">     <h3>Nursing College</h3>     <p>Dive into innovation and hands-on learning at Vidhyadeep Workshop,      where students explore practical skills and unleash their creativity.      <a href="#">Read More</a></p> </div>`)[0];
+                popup_0055028fee99ccd141a2269dae361310.setContent(html_564afdb9ea8a3521d197dd67b58443b1);
+            
+        
+
+        polygon_a19d6c6115455807e4d089f2118cba29.bindPopup(popup_0055028fee99ccd141a2269dae361310)
+        ;
+
+        
+    
+    
+            var polygon_3a3f572b558993c68092e7d27829866f = L.polygon(
+                [[21.42219, 72.865089], [21.422232, 72.865642], [21.422156, 72.865642], [21.422146, 72.866161], [21.421761, 72.86621], [21.421761, 72.865688], [21.421418, 72.865636], [21.421414, 72.865172]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#634208", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_3a3f572b558993c68092e7d27829866f.bindTooltip(
+                `<div>
+                     Heavy Vehical Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_f06bfb5d1f7782f67d33fe43aa5f9099 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_03f3927ee4e86a356fd9238f6c221afa = $(`<div id="html_03f3927ee4e86a356fd9238f6c221afa" style="width: 100.0%; height: 100.0%;">     <h3>Heavy Vehical Parking</h3>     <p>This is information about the Heavy Vehical Parking.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_f06bfb5d1f7782f67d33fe43aa5f9099.setContent(html_03f3927ee4e86a356fd9238f6c221afa);
+            
+        
+
+        polygon_3a3f572b558993c68092e7d27829866f.bindPopup(popup_f06bfb5d1f7782f67d33fe43aa5f9099)
+        ;
+
+        
+    
+    
+            var polygon_2590a7e69daa1258b3baa889c9273b03 = L.polygon(
+                [[21.42174021186657, 72.86622071839896], [21.421738446281214, 72.86599502202264], [21.42141534380346, 72.86600450506366], [21.421410047035575, 72.86621502857435]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b877d1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_2590a7e69daa1258b3baa889c9273b03.bindTooltip(
+                `<div>
+                     Proposed Ayurvedic Hospital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_6b24ecb36629c078fa82a4e699a4c899 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_440d11662f4445cc89031902a9a76ca0 = $(`<div id="html_440d11662f4445cc89031902a9a76ca0" style="width: 100.0%; height: 100.0%;">     <h3>Ayurvedic Hospital</h3>     <p>This is information about the Ayurvedic Hospital.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_6b24ecb36629c078fa82a4e699a4c899.setContent(html_440d11662f4445cc89031902a9a76ca0);
+            
+        
+
+        polygon_2590a7e69daa1258b3baa889c9273b03.bindPopup(popup_6b24ecb36629c078fa82a4e699a4c899)
+        ;
+
+        
+    
+    
+            var polygon_ef8e5739409f0aec0a2b940c04f7584f = L.polygon(
+                [[21.421741977451898, 72.86573139348225], [21.421741977451898, 72.86595140003394], [21.421664291677406, 72.86595329664213], [21.421664291677406, 72.86599502202264], [21.421531872648345, 72.86600071184725], [21.421519513532832, 72.86595329664213], [21.421440062051058, 72.86595329664213], [21.421427702927787, 72.86572191044122]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b877d1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_ef8e5739409f0aec0a2b940c04f7584f.bindTooltip(
+                `<div>
+                     Proposed Ayurvedic Collage
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_7d8ea9830e37ba6f35862951c01e980b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf72f040b3b3a48b1bf8d6f2f8141778 = $(`<div id="html_bf72f040b3b3a48b1bf8d6f2f8141778" style="width: 100.0%; height: 100.0%;">     <h3>Homeopathic Hospital</h3>     <p>This is a information of Homeopathic Hospital     <a href="#">Read More</a></p> </div>`)[0];
+                popup_7d8ea9830e37ba6f35862951c01e980b.setContent(html_bf72f040b3b3a48b1bf8d6f2f8141778);
+            
+        
+
+        polygon_ef8e5739409f0aec0a2b940c04f7584f.bindPopup(popup_7d8ea9830e37ba6f35862951c01e980b)
+        ;
+
+        
+    
+    
+            var polygon_32dc724b7deb85df432b1dd46e5beaae = L.polygon(
+                [[21.42379, 72.866247], [21.423723, 72.866219], [21.423657, 72.866379], [21.423724, 72.866401]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f70000", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_32dc724b7deb85df432b1dd46e5beaae.bindTooltip(
+                `<div>
+                     Vidhyadeep University Main Gate
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_f56c0434bf0c74f7719318104b030a17 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f684e071ca2ee463e1bbc7017be2695d = $(`<div id="html_f684e071ca2ee463e1bbc7017be2695d" style="width: 100.0%; height: 100.0%;"><h3>Main Gate</h3><a href="#">Read More</a></div>`)[0];
+                popup_f56c0434bf0c74f7719318104b030a17.setContent(html_f684e071ca2ee463e1bbc7017be2695d);
+            
+        
+
+        polygon_32dc724b7deb85df432b1dd46e5beaae.bindPopup(popup_f56c0434bf0c74f7719318104b030a17)
+        ;
+
+        
+    
+    
+            var polygon_d3b0aca87e0a3c463cf9154d4b785a88 = L.polygon(
+                [[21.423048, 72.866906], [21.423054, 72.867079], [21.422747, 72.867091], [21.42275, 72.866929]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9077ed", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_d3b0aca87e0a3c463cf9154d4b785a88.bindTooltip(
+                `<div>
+                     Vidhyadeep School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_e59e71b60a4e49afe72273b7fef81c57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aa7c82a094b90515343cf8a52cb21613 = $(`<div id="html_aa7c82a094b90515343cf8a52cb21613" style="width: 100.0%; height: 100.0%;">     <h3>School</h3>     <p>This is information about the School.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_e59e71b60a4e49afe72273b7fef81c57.setContent(html_aa7c82a094b90515343cf8a52cb21613);
+            
+        
+
+        polygon_d3b0aca87e0a3c463cf9154d4b785a88.bindPopup(popup_e59e71b60a4e49afe72273b7fef81c57)
+        ;
+
+        
+    
+    
+            var polygon_e531bfaadcde2287bb101540b564a361 = L.polygon(
+                [[21.423461, 72.866936], [21.42336, 72.867184], [21.423294, 72.867164], [21.423304, 72.867101], [21.423195, 72.867071], [21.423079, 72.867092], [21.423085, 72.866885], [21.423297, 72.866871]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00ed4b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_e531bfaadcde2287bb101540b564a361.bindTooltip(
+                `<div>
+                     Play Ground
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_db1323df6b47d06a4a792c0a335d4696 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eaaccff619230fe83c4ac659dbb2b420 = $(`<div id="html_eaaccff619230fe83c4ac659dbb2b420" style="width: 100.0%; height: 100.0%;">     <h3>Playground</h3>     <p>This is a information of playground     <a href="#">Read More</a></p> </div>`)[0];
+                popup_db1323df6b47d06a4a792c0a335d4696.setContent(html_eaaccff619230fe83c4ac659dbb2b420);
+            
+        
+
+        polygon_e531bfaadcde2287bb101540b564a361.bindPopup(popup_db1323df6b47d06a4a792c0a335d4696)
+        ;
+
+        
+    
+    
+            var polygon_8aab50ec0736991ec60d0683075904e0 = L.polygon(
+                [[21.422292, 72.866365], [21.422295, 72.866661], [21.421999, 72.866659], [21.421993, 72.866378]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d6d487", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_8aab50ec0736991ec60d0683075904e0.bindTooltip(
+                `<div>
+                     Vidhyadeep Institute of Pharmacy(VIP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_f24d04cfb806827323ff5abf6c614af3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_108f0f4ef7b5a887c0da874a59f0d3a6 = $(`<div id="html_108f0f4ef7b5a887c0da874a59f0d3a6" style="width: 100.0%; height: 100.0%;">     <h3>Vidhyadeep Institute of Pharmacy(VIP)</h3>     <p>This is information about the pharmacy     <a href="#">Read More</a></p> </div>`)[0];
+                popup_f24d04cfb806827323ff5abf6c614af3.setContent(html_108f0f4ef7b5a887c0da874a59f0d3a6);
+            
+        
+
+        polygon_8aab50ec0736991ec60d0683075904e0.bindPopup(popup_f24d04cfb806827323ff5abf6c614af3)
+        ;
+
+        
+    
+    
+            var polygon_889f55cac8bafc2d3bf2fb6e5e224209 = L.polygon(
+                [[21.421993, 72.866378], [21.421999, 72.866659], [21.42169, 72.86664], [21.421681, 72.866596], [21.421613, 72.866607], [21.421608, 72.866382]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d6d487", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_889f55cac8bafc2d3bf2fb6e5e224209.bindTooltip(
+                `<div>
+                     Physiotherapy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_2f46cfa3844119bcc4e741decccfb217 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc594ec9ab7169bfda0572bfbaaf6d10 = $(`<div id="html_dc594ec9ab7169bfda0572bfbaaf6d10" style="width: 100.0%; height: 100.0%;">     <h3>Physiotherapy College</h3>     <p>This is information about the physiotherapy area.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_2f46cfa3844119bcc4e741decccfb217.setContent(html_dc594ec9ab7169bfda0572bfbaaf6d10);
+            
+        
+
+        polygon_889f55cac8bafc2d3bf2fb6e5e224209.bindPopup(popup_2f46cfa3844119bcc4e741decccfb217)
+        ;
+
+        
+    
+    
+            var polygon_08846a5282d9e1f9a45dac95dfaaad63 = L.polygon(
+                [[21.42326569513903, 72.86670333335935], [21.423417130265307, 72.86671449731664], [21.423504725021566, 72.86674320463534], [21.423478001203183, 72.86680939095352], [21.423400056705002, 72.8667655325499], [21.423250106220063, 72.86677988620927]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6e5246", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_08846a5282d9e1f9a45dac95dfaaad63.bindTooltip(
+                `<div>
+                     unknown
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_7f4acfecaace9b8096f7942b0d5ca38c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e443aa99350644a59dc71ea8055dba8 = $(`<div id="html_9e443aa99350644a59dc71ea8055dba8" style="width: 100.0%; height: 100.0%;">     <h3>Currently Unknown place</h3>     <p>...<a href="#">Read More</a></p> </div>`)[0];
+                popup_7f4acfecaace9b8096f7942b0d5ca38c.setContent(html_9e443aa99350644a59dc71ea8055dba8);
+            
+        
+
+        polygon_08846a5282d9e1f9a45dac95dfaaad63.bindPopup(popup_7f4acfecaace9b8096f7942b0d5ca38c)
+        ;
+
+        
+    
+    
+            var polygon_107391721e66e5f282e9b6f68403b7b0 = L.polygon(
+                [[21.42176996354016, 72.86463086626274], [21.421768197955164, 72.86480725082575], [21.421656966057974, 72.86481483725858], [21.421655200471616, 72.86492294392622], [21.421782322634463, 72.86492294392622], [21.42178055704963, 72.86509743188101], [21.421498063200723, 72.86510312170563], [21.42146451701988, 72.86462896965455]],
+                {"bubblingMouseEvents": true, "color": "#c2582b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dde366", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            polygon_107391721e66e5f282e9b6f68403b7b0.bindTooltip(
+                `<div>
+                     unknown1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        var popup_471a6b3d593488848c8e221f822aad71 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f91833da5ea7a751b0e2dfa9008fef08 = $(`<div id="html_f91833da5ea7a751b0e2dfa9008fef08" style="width: 100.0%; height: 100.0%;">     <h3>Currently Unknown place</h3>     <p>...<a href="#">Read More</a></p> </div>`)[0];
+                popup_471a6b3d593488848c8e221f822aad71.setContent(html_f91833da5ea7a751b0e2dfa9008fef08);
+            
+        
+
+        polygon_107391721e66e5f282e9b6f68403b7b0.bindPopup(popup_471a6b3d593488848c8e221f822aad71)
+        ;
+
+        
+    
+    
+            var poly_line_f988bd638aa637d75ec7c59cf3d94bda = L.polyline(
+                [[21.423714, 72.866327], [21.423628, 72.866303], [21.423239, 72.86629], [21.422862, 72.866272], [21.422872, 72.865709], [21.42243, 72.865684], [21.422185, 72.865702], [21.422147, 72.866283], [21.421395, 72.86629], [21.421375, 72.865703], [21.421373, 72.865154]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            poly_line_f988bd638aa637d75ec7c59cf3d94bda.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_09c4dae0c855ace54747c521b7f2b4aa = L.polyline(
+                [[21.422883, 72.866275], [21.422776, 72.866291], [21.42234, 72.866275], [21.422134, 72.866273]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            poly_line_09c4dae0c855ace54747c521b7f2b4aa.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_68b83322a06650807159270c2b63cacd = L.polyline(
+                [[21.422869, 72.866274], [21.422852, 72.866891], [21.423303, 72.866846], [21.423507, 72.866899]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            poly_line_68b83322a06650807159270c2b63cacd.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_47e4173814e3d900ea2a2268c5932c3b = L.polyline(
+                [[21.422856, 72.865796], [21.422871, 72.865714], [21.42302, 72.865717]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            poly_line_47e4173814e3d900ea2a2268c5932c3b.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_1150be3bb88d1803d30e523b06e39b91 = L.polyline(
+                [[21.422295, 72.866268], [21.422319, 72.86665]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            poly_line_1150be3bb88d1803d30e523b06e39b91.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f70bafe0b70820808ab9a2239d0fdc17 = L.polyline(
+                [[21.422247, 72.865695], [21.42225, 72.865256]],
+                {"bubblingMouseEvents": true, "color": "#686e6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#686e6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            poly_line_f70bafe0b70820808ab9a2239d0fdc17.bindTooltip(
+                `<div>
+                     path
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b6987f9c5755d0a9cfd581931e51f7fe = L.marker(
+                [21.42335988928804, 72.86589851021863],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_205c727cccfb36f808479ab808aa338a = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 12px;\"\u003eRecreation\u003cbr\u003e   Area\u003c/div\u003e"});
+            marker_b6987f9c5755d0a9cfd581931e51f7fe.setIcon(div_icon_205c727cccfb36f808479ab808aa338a);
+        
+    
+        var popup_4440340c6b7e3de0202097cef96a6358 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_dbc9643fb5c510a02776f809776f55d0 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5SZWNyZWF0aW9uIGFyZWE8L2gzPgogICAgPHA+VGhpcyBpcyBpbmZvcm1hdGlvbiBhYm91dCB0aGUgUmVjcmVhdGlvbiBhcmVhLgogICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_4440340c6b7e3de0202097cef96a6358.setContent(i_frame_dbc9643fb5c510a02776f809776f55d0);
+            
+        
+
+        marker_b6987f9c5755d0a9cfd581931e51f7fe.bindPopup(popup_4440340c6b7e3de0202097cef96a6358)
+        ;
+
+        
+    
+    
+            marker_b6987f9c5755d0a9cfd581931e51f7fe.bindTooltip(
+                `<div>
+                     Recreation Area
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_26456a9748ddb786d0671d7e25445412 = L.marker(
+                [21.422673310826767, 72.86596391855792],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_4e0f8ff36e149ce551b2a821ff2a56bc = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 7px;\"\u003eDegree/Diploma \u003cbr\u003e Engineering College\u003c/div\u003e"});
+            marker_26456a9748ddb786d0671d7e25445412.setIcon(div_icon_4e0f8ff36e149ce551b2a821ff2a56bc);
+        
+    
+        var popup_eec2a07ce0a10c4dc97954a729e95a59 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_dd7a95a7ff863d1ec0842f19bcb3ddfb = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5EZWdyZWUvRGlwbG9tYSBFbmdpbmVlcmluZyBDb2xsZWdlIDwvaDM+CiAgICA8cD5UaGlzIGlzIGluZm9ybWF0aW9uIGFib3V0IHRoZSBEZWdyZWUvRGlwbG9tYSBFbmdpbmVlcmluZyBDb2xsZWdlLgogICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_eec2a07ce0a10c4dc97954a729e95a59.setContent(i_frame_dd7a95a7ff863d1ec0842f19bcb3ddfb);
+            
+        
+
+        marker_26456a9748ddb786d0671d7e25445412.bindPopup(popup_eec2a07ce0a10c4dc97954a729e95a59)
+        ;
+
+        
+    
+    
+            marker_26456a9748ddb786d0671d7e25445412.bindTooltip(
+                `<div>
+                     Degree/Diploma Engineering College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_43be9fbc5a82edfcbbed5a646ada0a20 = L.marker(
+                [21.422612421453497, 72.86489483054343],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_e55a4894bc9d42aee3c0cdc5b8267d47 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 14px;\"\u003ePlay Ground\u003c/div\u003e"});
+            marker_43be9fbc5a82edfcbbed5a646ada0a20.setIcon(div_icon_e55a4894bc9d42aee3c0cdc5b8267d47);
+        
+    
+        var popup_c4a3d6a7bf00b21b0b46b04561432cf8 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_1b34cf0121c1cb583e4bb2f9f3722342 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5QbGF5Z3JvdW5kPC9oMz4KICAgIDxwPlRoaXMgaXMgYSBpbmZvcm1hdGlvbiBvZiBwbGF5Z3JvdW5kCiAgICA8YSBocmVmPSIjIj5SZWFkIE1vcmU8L2E+PC9wPg==" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_c4a3d6a7bf00b21b0b46b04561432cf8.setContent(i_frame_1b34cf0121c1cb583e4bb2f9f3722342);
+            
+        
+
+        marker_43be9fbc5a82edfcbbed5a646ada0a20.bindPopup(popup_c4a3d6a7bf00b21b0b46b04561432cf8)
+        ;
+
+        
+    
+    
+            marker_43be9fbc5a82edfcbbed5a646ada0a20.bindTooltip(
+                `<div>
+                     PlayGround
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e8f3edbf507f7398fd7f34d424e2155a = L.marker(
+                [21.42273000091073, 72.86641049964308],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_402d731a60ab9c2ce18b5a778dc79852 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 9px;\"\u003eScience College\u003c/div\u003e"});
+            marker_e8f3edbf507f7398fd7f34d424e2155a.setIcon(div_icon_402d731a60ab9c2ce18b5a778dc79852);
+        
+    
+        var popup_0782f0bbafd5c41ab23c80fde4bc23fa = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_23a879ffce7d763de409d11d67fbb30e = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5TY2llbmNlIENvbGxlZ2U8L2gzPgogICAgPHA+VGhpcyBpcyBpbmZvcm1hdGlvbiBhYm91dCB0aGUgU2NpZW5jZSBDb2xsZWdlLgogICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_0782f0bbafd5c41ab23c80fde4bc23fa.setContent(i_frame_23a879ffce7d763de409d11d67fbb30e);
+            
+        
+
+        marker_e8f3edbf507f7398fd7f34d424e2155a.bindPopup(popup_0782f0bbafd5c41ab23c80fde4bc23fa)
+        ;
+
+        
+    
+    
+            marker_e8f3edbf507f7398fd7f34d424e2155a.bindTooltip(
+                `<div>
+                     Science College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b79012ac89ddc51fade81665c7665b8e = L.marker(
+                [21.422486443346394, 72.86638343412254],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_541229e6a8fdf2e9f7c90a6e88dae727 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 9px;\"\u003eNursing College\u003c/div\u003e"});
+            marker_b79012ac89ddc51fade81665c7665b8e.setIcon(div_icon_541229e6a8fdf2e9f7c90a6e88dae727);
+        
+    
+        var popup_17a987153316c276e15284e13c79d485 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_7bd5202fbfe7b2e094b0acc21569fac1 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5OdXJzaW5nIENvbGxhZ2U8L2gzPgogICAgPHA+VGhpcyBpcyBpbmZvcm1hdGlvbiBhYm91dCB0aGUgcGh5c2lvdGhlcmFweSBhcmVhLgogICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_17a987153316c276e15284e13c79d485.setContent(i_frame_7bd5202fbfe7b2e094b0acc21569fac1);
+            
+        
+
+        marker_b79012ac89ddc51fade81665c7665b8e.bindPopup(popup_17a987153316c276e15284e13c79d485)
+        ;
+
+        
+    
+    
+            marker_b79012ac89ddc51fade81665c7665b8e.bindTooltip(
+                `<div>
+                     Nursing College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5985fe08c002b92c734b3d9b8a247656 = L.marker(
+                [21.422198792938673, 72.86638794503911],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_d8f029ccaaf81c0bd44c48992766118c = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"\n               font-size: 9px;\"\u003eVidhyadeep Institute\u003cbr\u003e of Pharmacy(VIP)\u003c/div\u003e"});
+            marker_5985fe08c002b92c734b3d9b8a247656.setIcon(div_icon_d8f029ccaaf81c0bd44c48992766118c);
+        
+    
+        var popup_779acdd547b80cbf514d1be74117dd1e = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_c67f6efb6daee4e64563c9b80c8f5b33 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5WaWRoeWFkZWVwIEluc3RpdHV0ZSBvZiBQaGFybWFjeShWSVApPC9oMz4KICAgIDxwPlRoaXMgaXMgaW5mb3JtYXRpb24gYWJvdXQgdGhlIHBoYXJtYWN5CiAgICA8YSBocmVmPSIjIj5SZWFkIE1vcmU8L2E+PC9wPg==" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_779acdd547b80cbf514d1be74117dd1e.setContent(i_frame_c67f6efb6daee4e64563c9b80c8f5b33);
+            
+        
+
+        marker_5985fe08c002b92c734b3d9b8a247656.bindPopup(popup_779acdd547b80cbf514d1be74117dd1e)
+        ;
+
+        
+    
+    
+            marker_5985fe08c002b92c734b3d9b8a247656.bindTooltip(
+                `<div>
+                     Vidhyadeep Institute of Pharmacy(VIP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e71dae5f714b53a036cb8ae3b86d759b = L.marker(
+                [21.423240210705597, 72.86642177693508],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_3ca923de72df87f2eea2e43803207cbb = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 12px;\"\u003eParking\u003c/div\u003e"});
+            marker_e71dae5f714b53a036cb8ae3b86d759b.setIcon(div_icon_3ca923de72df87f2eea2e43803207cbb);
+        
+    
+        var popup_37889c504cd89a29a72120eb318abc1c = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_b0a854efa2275750f1043e30501cec4a = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5WaWRoeWFkZWVwIFBhcmtpbmc8L2gzPgogICAgPHA+VmlkaHlhZGVlcCBwcm92aWRlcyBjb252ZW5pZW50IGFuZCBzZWN1cmUgcGFya2luZyBmYWNpbGl0aWVzLAogICAgIGVuc3VyaW5nIGhhc3NsZS1mcmVlIGFjY2VzcyBmb3IgYm90aCBzdHVkZW50cyBhbmQgdmlzaXRvcnMuCiAgICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_37889c504cd89a29a72120eb318abc1c.setContent(i_frame_b0a854efa2275750f1043e30501cec4a);
+            
+        
+
+        marker_e71dae5f714b53a036cb8ae3b86d759b.bindPopup(popup_37889c504cd89a29a72120eb318abc1c)
+        ;
+
+        
+    
+    
+            marker_e71dae5f714b53a036cb8ae3b86d759b.bindTooltip(
+                `<div>
+                     Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a928b9d70d927eeed4e4e4e237c55655 = L.marker(
+                [21.42165722933222, 72.86585467301552],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_654174d68a7b09a129badda9622d1a44 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 10px;\"\u003eHomeopathic \u003cbr\u003eHospital\u003c/div\u003e"});
+            marker_a928b9d70d927eeed4e4e4e237c55655.setIcon(div_icon_654174d68a7b09a129badda9622d1a44);
+        
+    
+        var popup_4f38949b47a89647debcf96ea3261fa2 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_922475adba0145ea097ae75cca93e818 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5Ib21lb3BhdGhpYyBIb3NwaXRhbDwvaDM+CiAgICA8cD5UaGlzIGlzIGEgaW5mb3JtYXRpb24gb2YgSG9tZW9wYXRoaWMgSG9zcGl0YWwKICAgIDxhIGhyZWY9IiMiPlJlYWQgTW9yZTwvYT48L3A+" width="250" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_4f38949b47a89647debcf96ea3261fa2.setContent(i_frame_922475adba0145ea097ae75cca93e818);
+            
+        
+
+        marker_a928b9d70d927eeed4e4e4e237c55655.bindPopup(popup_4f38949b47a89647debcf96ea3261fa2)
+        ;
+
+        
+    
+    
+            marker_a928b9d70d927eeed4e4e4e237c55655.bindTooltip(
+                `<div>
+                     Vidhyadeep Homeopathic Hospital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f8b6eaac820a33ec161c1e93e16c4837 = L.marker(
+                [21.42173491511047, 72.86638382670452],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_d0d02252c24ee6e458d1fe09ae88aa57 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 10px;\"\u003ePhysiotherapy Hospital \u003cbr\u003e and college\u003c/div\u003e"});
+            marker_f8b6eaac820a33ec161c1e93e16c4837.setIcon(div_icon_d0d02252c24ee6e458d1fe09ae88aa57);
+        
+    
+        var popup_826f9646abe579c6bb237fd76fd3480a = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_a040bd7f1bc68748490982ff5023637c = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5QaHlzaW90aGVyYXB5IENvbGxlZ2U8L2gzPgogICAgPHA+VGhpcyBpcyBpbmZvcm1hdGlvbiBhYm91dCB0aGUgcGh5c2lvdGhlcmFweSBhcmVhLgogICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_826f9646abe579c6bb237fd76fd3480a.setContent(i_frame_a040bd7f1bc68748490982ff5023637c);
+            
+        
+
+        marker_f8b6eaac820a33ec161c1e93e16c4837.bindPopup(popup_826f9646abe579c6bb237fd76fd3480a)
+        ;
+
+        
+    
+    
+            marker_f8b6eaac820a33ec161c1e93e16c4837.bindTooltip(
+                `<div>
+                     Vidhyadeep Institute Of Physiotherapy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5abc1d4f4dd8899369983d9d6fcfb0cd = L.marker(
+                [21.421899114465383, 72.86537483114158],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_2eb1d8198d153f74c465859d897a8c83 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 12px;\"\u003eHeavy Vehical Parking\u003c/div\u003e"});
+            marker_5abc1d4f4dd8899369983d9d6fcfb0cd.setIcon(div_icon_2eb1d8198d153f74c465859d897a8c83);
+        
+    
+        var popup_81a67d8ab8ca377e8ee2cf02d08e21f9 = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_4d29e38edac0a3d55fca44ee0f4d08f4 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5IZWF2eSBWZWhpY2FsIFBhcmtpbmc8L2gzPgogICAgPHA+VGhpcyBpcyBpbmZvcm1hdGlvbiBhYm91dCB0aGUgSGVhdnkgVmVoaWNhbCBQYXJraW5nLgogICAgPGEgaHJlZj0iIyI+UmVhZCBNb3JlPC9hPjwvcD4=" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_81a67d8ab8ca377e8ee2cf02d08e21f9.setContent(i_frame_4d29e38edac0a3d55fca44ee0f4d08f4);
+            
+        
+
+        marker_5abc1d4f4dd8899369983d9d6fcfb0cd.bindPopup(popup_81a67d8ab8ca377e8ee2cf02d08e21f9)
+        ;
+
+        
+    
+    
+            marker_5abc1d4f4dd8899369983d9d6fcfb0cd.bindTooltip(
+                `<div>
+                     Heavy Vehical Parking
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_14a99a9ff97cab4ae87c56d4d03a9d0c = L.marker(
+                [21.422376540871614, 72.86542572701963],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var div_icon_c1c3ff99ec21348cbde803a65a4cde84 = L.divIcon({"className": "mapText", "html": "\u003cdiv style=\"font-size: 10px;\"\u003eMess\u003c/div\u003e"});
+            marker_14a99a9ff97cab4ae87c56d4d03a9d0c.setIcon(div_icon_c1c3ff99ec21348cbde803a65a4cde84);
+        
+    
+        var popup_16c8e89a66a5e39d1cfa2f9d6682aeab = L.popup({"maxWidth": 500});
+
+        
+            
+                var i_frame_e852e76ad9a3ad60582c87fa3693ed79 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMz5WaWRoeWFkZWVwIE1lc3M8L2gzPgogICAgPHA+SW5kdWxnZSB5b3VyIHRhc3RlIGJ1ZHMgYXQgVmlkaHlhZGVlcCBNZXNzLCBhIGN1bGluYXJ5IGhhdmVuIHdoZXJlIGRlbGljaW91cyBmbGF2b3JzIG1lZXQgd2hvbGVzb21lIG1lYWxzLgogV2l0aCBhIGRpdmVyc2UgbWVudSBjYXRlcmluZyB0byB2YXJpb3VzIHByZWZlcmVuY2VzLHRoZSBNZXNzIGVuc3VyZXMgYSBzYXRpc2Z5aW5nIGRpbmluZyBleHBlcmllbmNlIGZvciBzdHVkZW50cy4KIDxhIGhyZWY9IiMiPlJlYWQgTW9yZTwvYT48L3A+" width="250" style="border:none !important;" height="300"></iframe>`)[0];
+                popup_16c8e89a66a5e39d1cfa2f9d6682aeab.setContent(i_frame_e852e76ad9a3ad60582c87fa3693ed79);
+            
+        
+
+        marker_14a99a9ff97cab4ae87c56d4d03a9d0c.bindPopup(popup_16c8e89a66a5e39d1cfa2f9d6682aeab)
+        ;
+
+        
+    
+    
+            marker_14a99a9ff97cab4ae87c56d4d03a9d0c.bindTooltip(
+                `<div>
+                     Vidhyadeep Mess
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            ant_path_d1ffbaf656c8f1caacc96754d25fa0d6 = L.polyline.antPath(
+              [[21.423736901684983, 72.86631258020064], [21.42345030355487, 72.86630806928021], [21.42286660745004, 72.86627762057066], [21.422884454302764, 72.86608252328611], [21.422827764276576, 72.86607237371625], [21.422831963538535, 72.86617161395496], [21.422788921097794, 72.86618063579485]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+
+        function geo_json_54924e679a4b1f758e26f0eb2a4abf6f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_54924e679a4b1f758e26f0eb2a4abf6f = L.geoJson(null, {
+                onEachFeature: geo_json_54924e679a4b1f758e26f0eb2a4abf6f_onEachFeature,
+            
+        });
+
+        function geo_json_54924e679a4b1f758e26f0eb2a4abf6f_add (data) {
+            geo_json_54924e679a4b1f758e26f0eb2a4abf6f
+                .addData(data)
+                .addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        }
+            geo_json_54924e679a4b1f758e26f0eb2a4abf6f_add({"features": [{"geometry": {"coordinates": [[[72.86607964278554, 21.42283322161478], [72.86607964278554, 21.422752597180036], [72.86621332056586, 21.422752597180036], [72.86621332056586, 21.42283322161478], [72.86607964278554, 21.42283322161478]]], "type": "Polygon"}, "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            var marker_1c6ee392d30278d70f606cb986fe962a = L.marker(
+                [21.422758476433113, 72.86618063579553],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var icon_1ef9205216d05adbcf42b0726297f9b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1c6ee392d30278d70f606cb986fe962a.setIcon(icon_1ef9205216d05adbcf42b0726297f9b5);
+        
+    
+        var popup_200447126a1912bea126e0980a8395e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2de97b9d3d4f373416ac14ecb12a48df = $(`<div id="html_2de97b9d3d4f373416ac14ecb12a48df" style="width: 100.0%; height: 100.0%;">     <h3>Admin Office</h3>     <p>At the heart of Vidhyadeep, the Admin Office serves as the nerve center,      overseeing campus operations with efficiency and dedication. Providing crucial administrative support,      one-stop destination for students, faculty, and staff.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_200447126a1912bea126e0980a8395e1.setContent(html_2de97b9d3d4f373416ac14ecb12a48df);
+            
+        
+
+        marker_1c6ee392d30278d70f606cb986fe962a.bindPopup(popup_200447126a1912bea126e0980a8395e1)
+        ;
+
+        
+    
+    
+            marker_1c6ee392d30278d70f606cb986fe962a.bindTooltip(
+                `<div>
+                     Admin Office
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            ant_path_d4b759a0163bfd01527ebec1f773383e = L.polyline.antPath(
+              [[21.423736901684983, 72.86631258020064], [21.42345030355487, 72.86630806928021], [21.42286660745004, 72.86627762057066], [21.422884454302764, 72.86608252328611], [21.422827764276576, 72.86607237371625], [21.422831963538535, 72.86617161395496], [21.422788921097794, 72.86618063579485]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+
+        function geo_json_e89c7600633079413c772943034f88f1_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e89c7600633079413c772943034f88f1 = L.geoJson(null, {
+                onEachFeature: geo_json_e89c7600633079413c772943034f88f1_onEachFeature,
+            
+        });
+
+        function geo_json_e89c7600633079413c772943034f88f1_add (data) {
+            geo_json_e89c7600633079413c772943034f88f1
+                .addData(data)
+                .addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        }
+            geo_json_e89c7600633079413c772943034f88f1_add({"features": [{"geometry": {"coordinates": [[[72.86607964278554, 21.42283322161478], [72.86607964278554, 21.422752597180036], [72.86621332056586, 21.422752597180036], [72.86621332056586, 21.42283322161478], [72.86607964278554, 21.42283322161478]]], "type": "Polygon"}, "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            var marker_7f74bf84caf9af19ce2e032989c2379f = L.marker(
+                [21.422758476433113, 72.86618063579553],
+                {}
+            ).addTo(map_b18d522a71917ee0a832aeafb7dbe9b5);
+        
+    
+            var icon_b45aa0fec62dbbf77fcbe62f5a47c876 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7f74bf84caf9af19ce2e032989c2379f.setIcon(icon_b45aa0fec62dbbf77fcbe62f5a47c876);
+        
+    
+        var popup_34bc72e10a9e190bdeb5dce82ab4d145 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c561e8098aa95d6576bd3232e2d5c078 = $(`<div id="html_c561e8098aa95d6576bd3232e2d5c078" style="width: 100.0%; height: 100.0%;">     <h3> Vidhyadeep Admin Office</h3>     <p>At the heart of Vidhyadeep, the Admin Office serves as the nerve center,      overseeing campus operations with efficiency and dedication. Providing crucial administrative support,      one-stop destination for students, faculty, and staff.     <a href="#">Read More</a></p> </div>`)[0];
+                popup_34bc72e10a9e190bdeb5dce82ab4d145.setContent(html_c561e8098aa95d6576bd3232e2d5c078);
+            
+        
+
+        marker_7f74bf84caf9af19ce2e032989c2379f.bindPopup(popup_34bc72e10a9e190bdeb5dce82ab4d145)
+        ;
+
+        
+    
+    
+            marker_7f74bf84caf9af19ce2e032989c2379f.bindTooltip(
+                `<div>
+                     Admin Office
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
