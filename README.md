@@ -34,6 +34,12 @@ To set up this project on your local machine, follow these steps:
 
     This command copies the repository from GitHub to your local machine.
 
+## QR Code
+
+Scan the QR code below to navigate to the website:
+
+![QR Code](images/Path Provider QR Code.png)
+
 ## Contributing
 
 Contributions are welcome! Please create an issue or submit a pull request for any improvements or bug fixes.
